@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>检查列表</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="检查清单">
+    <link rel="apple-touch-icon" href="icons/icon-152x152.png">
+    <meta name="theme-color" content="#000000">
+    <script>
+        // 注册Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+
+        // 添加到主屏幕提示
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPromotion();
+        });
+
+        function showInstallPromotion() {
+            const toast = document.createElement('div');
+            toast.className = 'toast-message';
+            toast.textContent = '点击添加到主屏幕';
+            toast.style.cursor = 'pointer';
+            toast.onclick = () => {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('用户接受安装');
+                    }
+                    deferredPrompt = null;
+                });
+            };
+            document.body.appendChild(toast);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <button class="check-button" onclick="window.location.href='checklist-before-leaving.html'">出门前检查列表</button>
+            <button class="check-button" onclick="window.location.href='checklist-streaming.html'">直播设备检查列表</button>
+            <button class="check-button" onclick="window.location.href='checklist-leaving-room.html'">离开房间检查列表</button>
+            <button class="check-button history-button" onclick="window.location.href='history.html'">
+                查看历史记录
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

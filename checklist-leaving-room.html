@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>离开房间检查列表</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="checklist-container">
+            <h1 class="checklist-title">离开房间检查列表</h1>
+            <div class="date-display" id="currentDate"></div>
+            <ol class="checklist">
+                <li class="checklist-item">
+                    <div class="item-content">
+                        <span class="item-text">检查是否开启了勿扰</span>
+                        <div class="item-actions">
+                            <div class="photo-buttons">
+                                <button class="photo-button" onclick="takePhoto(this)">
+                                    <span class="camera-icon">📸</span>
+                                    拍照
+                                </button>
+                                <label class="upload-button">
+                                    <span class="upload-icon">📤</span>
+                                    上传图片
+                                    <input type="file" accept="image/*" onchange="handleFileUpload(this)" style="display: none;">
+                                </label>
+                            </div>
+                            <div class="photo-preview"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="item-content">
+                        <span class="item-text">床头是否放了充电宝？客厅是否有放一个充着电的充电宝（拿另外的线充电）？</span>
+                        <div class="item-actions">
+                            <div class="photo-buttons">
+                                <button class="photo-button" onclick="takePhoto(this)">
+                                    <span class="camera-icon">📸</span>
+                                    拍照
+                                </button>
+                                <label class="upload-button">
+                                    <span class="upload-icon">📤</span>
+                                    上传图片
+                                    <input type="file" accept="image/*" onchange="handleFileUpload(this)" style="display: none;">
+                                </label>
+                            </div>
+                            <div class="photo-preview"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="checklist-item">虫草水泡了吗？</li>
+                <li class="checklist-item">韦梗泡了吗？</li>
+                <li class="checklist-item">水果准备否？</li>
+                <li class="checklist-item">需要充电的产品：耳机、充电宝、iPad、吉他、Vision Pro</li>
+                <li class="checklist-item">餐桌上有没有药？</li>
+                <li class="checklist-item">有需要确认明天几点起来？起床吃什么吗？</li>
+                <li class="checklist-item">买的宵夜，摆在餐桌，是否拆掉外包装，轻轻盖回盖子？</li>
+                <li class="checklist-item">制冰机有没有加水？</li>
+                <li class="checklist-item">香薰机有没有加水？</li>
+            </ol>
+            <button class="save-button" onclick="saveChecklist()">保存记录</button>
+            <button class="back-button" onclick="window.location.href='index.html'">返回</button>
+        </div>
+    </div>
+    <script src="checklist.js"></script>
+</body>
+</html> 

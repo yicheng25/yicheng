@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直播设备检查列表</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="checklist-container">
+            <h1 class="checklist-title">直播设备检查列表</h1>
+            <div class="date-display" id="currentDate"></div>
+            <ol class="checklist">
+                <li class="checklist-item">
+                    <div class="item-content">
+                        <span class="item-text">软件位置摆放</span>
+                        <div class="item-actions">
+                            <div class="photo-buttons">
+                                <button class="photo-button" onclick="takePhoto(this)">
+                                    <span class="camera-icon">📸</span>
+                                    拍照
+                                </button>
+                                <label class="upload-button">
+                                    <span class="upload-icon">📤</span>
+                                    上传图片
+                                    <input type="file" accept="image/*" onchange="handleFileUpload(this)" style="display: none;">
+                                </label>
+                            </div>
+                            <div class="photo-preview"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="item-content">
+                        <span class="item-text">测试福袋功能</span>
+                        <div class="item-actions">
+                            <div class="photo-buttons">
+                                <button class="photo-button" onclick="takePhoto(this)">
+                                    <span class="camera-icon">📸</span>
+                                    拍照
+                                </button>
+                                <label class="upload-button">
+                                    <span class="upload-icon">📤</span>
+                                    上传图片
+                                    <input type="file" accept="image/*" onchange="handleFileUpload(this)" style="display: none;">
+                                </label>
+                            </div>
+                            <div class="photo-preview"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="checklist-item">测试声卡并且检查数值是否正确</li>
+                <li class="checklist-item">开播测试并且录屏</li>
+                <li class="checklist-item">下载虚拟主播中的所有文件</li>
+                <li class="checklist-item">检查aimv的联动播放情况</li>
+                <li class="checklist-item">记得将开播设置调回所有人可见</li>
+                <li class="checklist-item">每日的台本歌单是否打印并且放好</li>
+                <li class="checklist-item">测试网速</li>
+                <li class="checklist-item">检查面捕是否链接</li>
+            </ol>
+            <button class="save-button" onclick="saveChecklist()">保存记录</button>
+            <button class="back-button" onclick="window.location.href='index.html'">返回</button>
+        </div>
+    </div>
+    <script src="checklist.js"></script>
+</body>
+</html> 

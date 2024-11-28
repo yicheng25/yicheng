@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出门前检查列表</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="checklist-container">
+            <h1 class="checklist-title">出门前检查列表</h1>
+            <div class="date-display" id="currentDate"></div>
+            <ol class="checklist">
+                <li class="checklist-item">
+                    <div class="item-content">
+                        <span class="item-text">检查耳机带了没有</span>
+                        <div class="item-actions">
+                            <div class="photo-buttons">
+                                <button class="photo-button" onclick="takePhoto(this)">
+                                    <span class="camera-icon">📸</span>
+                                    拍照
+                                </button>
+                                <label class="upload-button">
+                                    <span class="upload-icon">📤</span>
+                                    上传图片
+                                    <input type="file" accept="image/*" onchange="handleFileUpload(this)" style="display: none;">
+                                </label>
+                            </div>
+                            <div class="photo-preview"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="item-content">
+                        <span class="item-text">检查口香糖带了没有</span>
+                        <div class="item-actions">
+                            <div class="photo-buttons">
+                                <button class="photo-button" onclick="takePhoto(this)">
+                                    <span class="camera-icon">📸</span>
+                                    拍照
+                                </button>
+                                <label class="upload-button">
+                                    <span class="upload-icon">📤</span>
+                                    上传图片
+                                    <input type="file" accept="image/*" onchange="handleFileUpload(this)" style="display: none;">
+                                </label>
+                            </div>
+                            <div class="photo-preview"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="item-content">
+                        <span class="item-text">检查背包中的物质是否足够</span>
+                        <div class="item-actions">
+                            <div class="photo-buttons">
+                                <button class="photo-button" onclick="takePhoto(this)">
+                                    <span class="camera-icon">📸</span>
+                                    拍照
+                                </button>
+                                <label class="upload-button">
+                                    <span class="upload-icon">📤</span>
+                                    上传图片
+                                    <input type="file" accept="image/*" onchange="handleFileUpload(this)" style="display: none;">
+                                </label>
+                            </div>
+                            <div class="photo-preview"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="item-content">
+                        <span class="item-text">通知司机并请司机到位</span>
+                        <div class="item-actions">
+                            <div class="photo-buttons">
+                                <button class="photo-button" onclick="takePhoto(this)">
+                                    <span class="camera-icon">📸</span>
+                                    拍照
+                                </button>
+                                <label class="upload-button">
+                                    <span class="upload-icon">📤</span>
+                                    上传图片
+                                    <input type="file" accept="image/*" onchange="handleFileUpload(this)" style="display: none;">
+                                </label>
+                            </div>
+                            <div class="photo-preview"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+            <button class="save-button" onclick="saveChecklist()">保存记录</button>
+            <button class="back-button" onclick="window.location.href='index.html'">返回</button>
+        </div>
+    </div>
+    <script src="checklist.js"></script>
+</body>
+</html> 

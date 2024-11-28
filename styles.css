@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 430px;
+    padding: 16px;
+}
+
+.check-button {
+    padding: 16px 20px;
+    font-size: 17px;
+    border: none;
+    border-radius: 14px;
+    background-color: #1c1c1e;
+    color: #0A84FF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.check-button::after {
+    content: "›";
+    font-size: 24px;
+    color: #48484a;
+}
+
+.check-button:active {
+    transform: scale(0.98);
+    background-color: #2c2c2e;
+}
+
+.checklist-container {
+    width: 100%;
+    max-width: 430px;
+    background-color: #1c1c1e;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.checklist-title {
+    color: #ffffff;
+    padding: 16px 20px;
+    font-size: 22px;
+    font-weight: 600;
+    border-bottom: 1px solid #38383a;
+}
+
+.checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.checklist-item {
+    padding: 16px 20px;
+    font-size: 17px;
+    color: #ffffff;
+    border-bottom: 1px solid #38383a;
+    display: flex;
+    align-items: center;
+}
+
+.checklist-item::before {
+    content: counter(item);
+    counter-increment: item;
+    min-width: 28px;
+    height: 28px;
+    background-color: #0A84FF;
+    color: white;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.back-button {
+    margin: 16px 20px;
+    padding: 16px;
+    font-size: 17px;
+    border: none;
+    border-radius: 14px;
+    background-color: #0A84FF;
+    color: white;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    width: calc(100% - 40px);
+}
+
+.back-button:active {
+    transform: scale(0.98);
+    background-color: #0056b3;
+}
+
+/* 添加平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 设置列表计数器 */
+.checklist {
+    counter-reset: item;
+}
+
+.date-display {
+    padding: 10px 20px;
+    color: #0A84FF;
+    font-size: 14px;
+    text-align: center;
+}
+
+.item-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-text {
+    flex: 1;
+}
+
+.item-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.photo-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #2c2c2e;
+    border: none;
+    border-radius: 8px;
+    color: #0A84FF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.camera-icon {
+    font-size: 16px;
+}
+
+.photo-preview {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 8px;
+}
+
+.photo-preview img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.photo-preview video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.capture-button,
+.cancel-button {
+    padding: 8px 16px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0A84FF;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #FF453A;
+}
+
+.save-button {
+    margin: 16px 20px;
+    padding: 16px;
+    font-size: 17px;
+    border: none;
+    border-radius: 14px;
+    background-color: #30D158;
+    color: white;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    width: calc(100% - 40px);
+}
+
+.save-button:active {
+    transform: scale(0.98);
+    background-color: #25A344;
+}
+
+.history-button {
+    background-color: #2c2c2e;
+    color: #0A84FF;
+}
+
+.history-list {
+    padding: 16px;
+}
+
+.history-item {
+    background-color: #2c2c2e;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.history-item:active {
+    transform: scale(0.98);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.history-date {
+    color: #0A84FF;
+    font-size: 15px;
+}
+
+.history-name {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.history-details {
+    color: #98989f;
+    font-size: 14px;
+}
+
+.no-records {
+    text-align: center;
+    color: #98989f;
+    padding: 32px;
+}
+
+.record-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1c1c1e;
+    border-radius: 14px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.details-list {
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #38383a;
+}
+
+.detail-number {
+    background-color: #0A84FF;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 14px;
+}
+
+.detail-text {
+    flex: 1;
+    color: #ffffff;
+}
+
+.detail-status {
+    margin-left: 12px;
+    font-size: 18px;
+}
+
+.completed .detail-status {
+    color: #30D158;
+}
+
+.close-modal-button {
+    width: 100%;
+    padding: 16px;
+    background-color: #0A84FF;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.close-modal-button:active {
+    background-color: #0056b3;
+}
+
+/* 在现有样式的末尾添加提示框样式 */
+.toast-message {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(44, 44, 46, 0.9);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    z-index: 1000;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, 20px); }
+    20% { opacity: 1; transform: translate(-50%, 0); }
+    80% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+/* 添加删除按钮样式 */
+.delete-button {
+    background-color: #FF453A;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.history-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 16px;
+    margin-bottom: 16px;
+}
+
+.clear-all-button {
+    background-color: #FF453A;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+}
+
+.photo-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.upload-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #2c2c2e;
+    border: none;
+    border-radius: 8px;
+    color: #0A84FF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 16px;
+}
+
+.photo-button {
+    flex: 1;
+}
+
+.upload-button {
+    flex: 1;
+} 
